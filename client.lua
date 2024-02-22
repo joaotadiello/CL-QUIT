@@ -15,7 +15,10 @@ Citizen.CreateThread(function()
         if toogle then
             idle = 1
             for k, v in pairs(GlobalState.cl) do
-                DrawText3Ds(v.cds.x, v.cds.y, v.cds.z, v.text, 300)
+                local distance = #(GetEntityCoords(PlayerPedId()) - v.cds)
+                if distance < 20 then
+                    DrawText3Ds(v.cds.x, v.cds.y, v.cds.z, v.text, 300)
+                end
             end
         end
         Wait(idle)
