@@ -12,7 +12,7 @@ AddEventHandler("playerDropped", function(reason)
     local ped = GetPlayerPed(source)
     local cds = GetEntityCoords(ped)
     local temp = GlobalState.cl
-    temp[userId] = { cds = cds, text = '~r~ID:[' .. userId .. "]  ~g~[MOTIVO]:" .. reason}
+    temp[userId] = { cds = cds, text = '~r~ID:[' .. userId .. "]  ~g~[MOTIVO]:" .. reason }
     GlobalState.cl = temp
 
     Citizen.SetTimeout(15000, function()
@@ -23,7 +23,7 @@ AddEventHandler("playerDropped", function(reason)
     end)
 end)
 
---- [ DEBUG COMMAND ]
+-- [ DEBUG COMMAND ]
 -- RegisterCommand('test',function(source)
 --     local source = source
 --     local userId = BASE == 'vrpex' and vRP.getUserId(source) or vRP.Passport(source)
